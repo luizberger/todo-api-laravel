@@ -19,7 +19,7 @@ class CreateTableTodoList extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('title');
             $table->string('desc');
-            $table->boolean('done');
+            $table->boolean('done')->default(false);
             $table->timestamps(); // created_at && updated_at
         });
     }

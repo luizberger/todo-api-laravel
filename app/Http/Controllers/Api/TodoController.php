@@ -19,4 +19,12 @@ class TodoController extends Controller
     	return response()->json($data);
     }
 
+    public function add(Request $request){
+        $todoData = $request->all();
+        Todo::create($todoData);
+
+        $responseData = ['msg' => 'To-do created!'];
+        return response()->json($responseData, 201);
+    }
+
 }

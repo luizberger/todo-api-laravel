@@ -21,7 +21,10 @@ Route::namespace('API')->name('api.')->group(function(){
 	Route::prefix('todos')->group(function(){
 
 		Route::get('/', 'TodoController@index')->name('todos');
-		Route::get('/{id}', 'TodoController@show')->name('single_todo');	
+		Route::get('/{id}', 'TodoController@show')->name('single_todo');
+
+		Route::post('/', 'TodoController@add')->name('add_todo');
+
 	});
 });
 
