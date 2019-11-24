@@ -25,6 +25,8 @@ Route::namespace('API')->name('api.')->group(function(){
 
 		Route::post('/', 'TodoController@add')->name('add_todo');
 
+		Route::delete('/{id}', 'TodoController@delete')->name('delete_todo');
+
 	});
 });
 
