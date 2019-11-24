@@ -33,4 +33,13 @@ class TodoController extends Controller
         return response()->json($responseData);
     }
 
+    public function update(Request $request, $id){
+        $todoData = $request->all();
+        $todo = Todo::find($id);
+        $todo->update($todoData);
+
+        $responseData = ['msg' => 'To-do updated!'];
+        return response()->json($responseData, 201);
+    }
+
 }
